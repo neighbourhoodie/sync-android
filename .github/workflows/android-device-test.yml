@@ -1,0 +1,32 @@
+name: Android Device Test CI
+
+on: workflow_dispatch
+  
+jobs:
+  android-test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: set up JDK 8
+      uses: actions/setup-java@v2
+      with:
+        java-version: '8'
+        distribution: 'adopt'
+        cache: gradle
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+    - name: Build with Gradle
+      run: ./gradlew assemble
+    - name: Set up CouchDB
+      uses: "cobot/couchdb-action@master"
+      with:
+        couchdb version: 2.3.1
+    - name: run tests
+      uses: reactivecircus/android-emulator-runner@v2
+      with:
+        api-level: 22
+        sdcard-path-or-size: "100M"
+        script: ./gradlew -b ./AndroidTest/build.gradle uploadFixture connectedCheck
+    
