@@ -1,13 +1,22 @@
+
+# :bell: ACTIVE FORK :bell:
+
+This library has successfully supported numerous mobile applications, helping to implement offline functionalities in contexts where they are highly valuable. 
+
+The deprecation by the original authors is a major loss for the CouchDB ecosystem, leaving PouchDB as the only option for the sync clients. This fork starts as a call to the community to keep active in the development of native sync clients linked to CouchDB. 
+
+The plan for this fork is to keep the pace of CouchDB and Android evolution, and it is open to any contribution that helps to move in this direction. Any help will be appreciated.
+
 # Cloudant Sync - Android Datastore
 
-[![Build Status](https://travis-ci.org/cloudant/sync-android.svg?branch=master)](https://travis-ci.org/cloudant/sync-android)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/neighbourhoodie/sync-android/Android%20Sync%20CI)](https://github.com/neighbourhoodie/sync-android/actions)
 
 | Artifact | Links |
 | ---|--- |
-| Core | [![maven-central-core](https://img.shields.io/maven-central/v/com.cloudant/cloudant-sync-datastore-core.svg?label=maven-central%20core)](http://search.maven.org/#search\|ga\|1\|g:"com.cloudant"%20AND%20a:"cloudant-sync-datastore-core") [![javadoc-core](http://www.javadoc.io/badge/com.cloudant/cloudant-sync-datastore-core.svg?label=javadoc-core)](http://www.javadoc.io/doc/com.cloudant/cloudant-sync-datastore-core) |
-| Android | [![maven-central-android](https://img.shields.io/maven-central/v/com.cloudant/cloudant-sync-datastore-android.svg?label=maven-central%20android)](http://search.maven.org/#search\|ga\|1\|g:"com.cloudant"%20AND%20a:"cloudant-sync-datastore-android") [![javadoc-android](http://www.javadoc.io/badge/com.cloudant/cloudant-sync-datastore-android.svg?label=javadoc-android)](http://www.javadoc.io/doc/com.cloudant/cloudant-sync-datastore-android) |
-| Android (encryption) | [![maven-central-android-encryption](https://img.shields.io/maven-central/v/com.cloudant/cloudant-sync-datastore-android-encryption.svg?label=maven-central%20android-encryption)](http://search.maven.org/#search\|ga\|1\|g:"com.cloudant"%20AND%20a:"cloudant-sync-datastore-android-encryption") [![javadoc-android-encryption](http://www.javadoc.io/badge/com.cloudant/cloudant-sync-datastore-android-encryption.svg?label=javadoc-android-encryption)](http://www.javadoc.io/doc/com.cloudant/cloudant-sync-datastore-android-encryption)
-| Java SE | [![maven-central-javase](https://img.shields.io/maven-central/v/com.cloudant/cloudant-sync-datastore-javase.svg?label=maven-central%20javase)](http://search.maven.org/#search\|ga\|1\|g:"com.cloudant"%20AND%20a:"cloudant-sync-datastore-javase") [![javadoc-javase](http://www.javadoc.io/badge/com.cloudant/cloudant-sync-datastore-javase.svg?label=javadoc-javase)](http://www.javadoc.io/doc/com.cloudant/cloudant-sync-datastore-javase)
+| Core |[![JitPack core](https://img.shields.io/jitpack/v/github/neighbourhoodie/sync-android?label=Jitpack%20core)](https://jitpack.io/com/github/neighbourhoodie/sync-android/cloudant-sync-datastore-core/2.4.1/) [![javadoc-core](http://www.javadoc.io/badge/com.cloudant/cloudant-sync-datastore-core.svg?label=javadoc-core)](https://javadoc.jitpack.io/com/github/neighbourhoodie/sync-android/cloudant-sync-datastore-core/2.4.1/javadoc/) |
+| Android |[![JitPack-android](https://img.shields.io/jitpack/v/github/neighbourhoodie/sync-android?label=Jitpack%20android)](https://jitpack.io/com/github/neighbourhoodie/sync-android/cloudant-sync-datastore-android/2.4.1/) [![javadoc-android](http://www.javadoc.io/badge/com.cloudant/cloudant-sync-datastore-core.svg?label=javadoc-android)](https://javadoc.jitpack.io/com/github/neighbourhoodie/sync-android/cloudant-sync-datastore-android/2.4.1/javadoc/) |
+| Android (encryption) |[![JitPack-android-encryption](https://img.shields.io/jitpack/v/github/neighbourhoodie/sync-android?label=Jitpack%20android-encryption)](https://jitpack.io/com/github/neighbourhoodie/sync-android/cloudant-sync-datastore-android-encryption/2.4.1/) [![javadoc-android](http://www.javadoc.io/badge/com.cloudant/cloudant-sync-datastore-android-encryption.svg?label=javadoc-android-encryption)](https://javadoc.jitpack.io/com/github/neighbourhoodie/sync-android/cloudant-sync-datastore-android-encryption/2.4.1/javadoc/) |
+| Java SE |[![JitPack-android-encryption](https://img.shields.io/jitpack/v/github/neighbourhoodie/sync-android?label=Jitpack%20javase)](https://jitpack.io/com/github/neighbourhoodie/sync-android/cloudant-sync-datastore-javase/2.4.1/) [![javadoc-android](http://www.javadoc.io/badge/com.cloudant/cloudant-sync-datastore-javase.svg?label=javadoc-javase)](https://javadoc.jitpack.io/com/github/neighbourhoodie/sync-android/cloudant-sync-datastore-javase/2.4.1/javadoc/) |
 
 **Applications use Cloudant Sync to store, index and query local JSON data on a
 device and to synchronise data between many devices. Synchronisation is under
@@ -21,7 +30,7 @@ devices that don't want or need to run a full CouchDB instance. It's built
 by [Cloudant](https://cloudant.com), building on the work of many others, and
 is available under the [Apache 2.0 licence][ap2].
 
-[ap2]: https://github.com/cloudant/sync-android/blob/master/LICENSE
+[ap2]: LICENSE
 [acdb]: http://couchdb.apache.org/
 
 The API is quite different from CouchDB's; we retain the
@@ -30,7 +39,7 @@ model but not the HTTP-centric API.
 
 This library is for Android and Java SE; an [iOS][ios] version is also available.
 
-[ios]: https://github.com/cloudant/CDTDatastore
+[ios]: https://github.com/neighbourhoodie/CDTDatastore
 
 ## Using in your project
 
@@ -57,10 +66,11 @@ Add the maven repo and a compile time dependency on the appropriate datastore ar
     repositories {
         mavenLocal()
         mavenCentral()
+        maven { url 'https://jitpack.io' }
     }
 
     dependencies {
-        compile group: 'com.cloudant', name: 'cloudant-sync-datastore-android', version:'latest.release'
+        compile group: 'com.github.neighbourhoodie.sync-android', name: 'cloudant-sync-datastore-android', version:'latest.release'
     }
     ```
     * Maven
@@ -72,7 +82,7 @@ Add the maven repo and a compile time dependency on the appropriate datastore ar
 
         <dependencies>
             <dependency>
-                <groupId>com.cloudant</groupId>
+                <groupId>com.github.neighbourhoodie.sync-android</groupId>
                 <artifactId>cloudant-sync-datastore-android</artifactId>
                 <version>latest.release</version>
                 <scope>compile</scope>
@@ -86,10 +96,11 @@ Add the maven repo and a compile time dependency on the appropriate datastore ar
     repositories {
         mavenLocal()
         mavenCentral()
+        maven { url 'https://jitpack.io' }
     }
 
     dependencies {
-        compile group: 'com.cloudant', name: 'cloudant-sync-datastore-android-encryption', version:'latest.release'
+        compile group: 'com.github.neighbourhoodie.sync-android', name: 'cloudant-sync-datastore-android-encryption', version:'latest.release'
     }
     ```
     * Maven
@@ -101,7 +112,7 @@ Add the maven repo and a compile time dependency on the appropriate datastore ar
 
         <dependencies>
             <dependency>
-                <groupId>com.cloudant</groupId>
+                <groupId>com.github.neighbourhoodie.sync-android</groupId>
                 <artifactId>cloudant-sync-datastore-android-encryption</artifactId>
                 <version>latest.release</version>
                 <scope>compile</scope>
@@ -115,10 +126,11 @@ Add the maven repo and a compile time dependency on the appropriate datastore ar
     repositories {
         mavenLocal()
         mavenCentral()
+        maven { url 'https://jitpack.io' }
     }
 
     dependencies {
-        compile group: 'com.cloudant', name: 'cloudant-sync-datastore-javase', version:'latest.release'
+        compile group: 'com.github.neighbourhoodie.sync-android', name: 'cloudant-sync-datastore-javase', version:'latest.release'
     }
     ```
     * Maven
@@ -130,7 +142,7 @@ Add the maven repo and a compile time dependency on the appropriate datastore ar
 
         <dependencies>
             <dependency>
-                <groupId>com.cloudant</groupId>
+                <groupId>com.github.neighbourhoodie.sync-android</groupId>
                 <artifactId>cloudant-sync-datastore-javase</artifactId>
                 <version>latest.release</version>
                 <scope>compile</scope>
@@ -141,7 +153,7 @@ Add the maven repo and a compile time dependency on the appropriate datastore ar
 
 You can see a fuller example in the sample application's [build.gradle][sabg].
 
-[sabg]: https://github.com/cloudant/sync-android/blob/master/sample/todo-sync/build.gradle
+[sabg]: sample/todo-sync/build.gradle
 
 _Note_: Older versions than 0.3.0 had a separate Mazha jar. This was rolled
 into the main jar for distribution simplicity. The dependency needs removing
@@ -166,7 +178,7 @@ Java:
 
 ## Example application
 
-There is a [sample Android application](https://github.com/cloudant/sync-android/blob/master/sample/todo-sync).
+There is a [sample Android application](sample/todo-sync).
 
 See the accompanying README.md for detailed instructions of how to run and build the sample.
 
@@ -204,13 +216,13 @@ try {
 ```
 
 Extensive code samples can be found in 
-[the CRUD samples class](https://github.com/cloudant/sync-android/blob/master/doc/CrudSamples.java).
+[the CRUD samples class](doc/CrudSamples.java).
 
 You can also subscribe for notifications of changes in the database, which
-is described in [the events documentation](https://github.com/cloudant/sync-android/blob/master/doc/events.md).
+is described in [the events documentation](doc/events.md).
 
 The
-[javadoc](http://www.javadoc.io/doc/com.cloudant/cloudant-sync-datastore-core/)
+[javadoc](https://javadoc.jitpack.io/com/github/neighbourhoodie/sync-android/cloudant-sync-datastore-core/2.4.1/javadoc/)
 for the latest release version of the library is the definitive
 reference for the library. Each jar contains the full javadoc for
 itself and the other jars - this is for convenience at the slight
@@ -251,7 +263,7 @@ Replicator replicator = ReplicatorBuilder.push().from(ds).to(uri).build();
 replicator.start();
 ```
 
-Read more in [the replication docs](https://github.com/cloudant/sync-android/blob/master/doc/replication.md).
+Read more in [the replication docs](doc/replication.md).
 
 ### Authentication
 
@@ -305,7 +317,7 @@ for (DocumentRevision revision : result) {
 }
 ```
 
-See [Index and Querying Data](https://github.com/cloudant/sync-android/blob/master/doc/query.md).
+See [Index and Querying Data](doc/query.md).
 
 ### Conflicts
 
@@ -324,14 +336,14 @@ conflicted and needs some surgery to resolve the conflicts and bring it
 back to full health.
 
 Learn more about this essential process in the
-[conflicts documentation](https://github.com/cloudant/sync-android/blob/master/doc/conflicts.md).
+[conflicts documentation](doc/conflicts.md).
 
 ## Issues
 
 Before opening a new issue please consider the following:
 * Only the latest release is supported. If at all possible please try to reproduce the issue using
 the latest version.
-* Please check the [existing issues](https://github.com/cloudant/sync-android/issues)
+* Please check the [existing issues](https://github.com/neighbourhoodie/sync-android/issues)
 to see if the problem has already been reported. Note that the default search
 includes only open issues, but it may already have been closed.
 * Cloudant customers should contact Cloudant support for urgent issues.
